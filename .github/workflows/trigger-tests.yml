@@ -6,7 +6,7 @@ on:
       - master  # Укажите ветку, на которую будет направлен PR
 
 jobs:
-  trigger-tests:
+  do-it:
     runs-on: ubuntu-latest
 
     steps:
