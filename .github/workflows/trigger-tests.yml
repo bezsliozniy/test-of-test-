@@ -3,7 +3,7 @@ name: Trigger Tests in repo1
 on:
   pull_request:
     branches:
-      - main  # Укажите ветку, на которую будет направлен PR
+      - master  # Укажите ветку, на которую будет направлен PR
 
 jobs:
   trigger-tests:
