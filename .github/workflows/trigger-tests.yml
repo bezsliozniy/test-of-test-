@@ -16,3 +16,4 @@ jobs:
         token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         repository: bezsliozniy/swap-api-tests
         event-type: run-tests
+        client-payload: '{"commit_sha": "${{ github.event.pull_request.head.sha }}"}'
