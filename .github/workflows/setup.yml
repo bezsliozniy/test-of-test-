@@ -1,0 +1,18 @@
+name: Trigger Tests in repo1
+
+on:
+  pull_request:
+    branches:
+      - main  # Укажите ветку, на которую будет направлен PR
+
+jobs:
+  trigger-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Trigger tests in repo1
+      uses: peter-evans/repository-dispatch@v2
+      with:
+        token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        repository: bezsliozniy/swap-api-tests
+        event-type: run-tests
