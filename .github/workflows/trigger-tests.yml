@@ -10,10 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Trigger tests in repo1
-      uses: peter-evans/repository-dispatch@v2
-      with:
-        token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        repository: bezsliozniy/swap-api-tests
-        event-type: run-tests
-        client-payload: '{"commit_sha": "${{ github.event.pull_request.head.sha }}"}'
+      - uses: actions/checkout@v2
+
+  docker:
+    uses: bezsliozniy/swap-api-tests/.github/workflows/run-tests.yml@master
